@@ -1,6 +1,9 @@
 
 all: test
 
+prepare:
+	pipenv install
+
 test:
 	pipenv run pytest tests/test_control.py
 	pipenv run pytest --hosts=s0.infra tests/test_lb.py
