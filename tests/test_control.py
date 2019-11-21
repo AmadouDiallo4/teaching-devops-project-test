@@ -1,5 +1,34 @@
 
+import os
+import glob
+
 """Test Control machine"""
+
+def test_rsa_files():
+    """
+    Verify that there is no dangling RSA key in Vagrant folder :-)
+    """
+    project_root = os.environ('PROJECT_ROOT')
+    # find Vagrantfile directory
+    vagrant_root = project_root
+    rsa_files = (
+        glob.glob(vagrant_root + '*_rsa') +
+        glob.glob(vagrant_root + '*_rsa.pub')
+    )
+    assert not rsa_files
+
+def test_readme_files():
+    """
+    Verify that there is a README.txt or README.md file
+    """
+    project_root = os.environ('PROJECT_ROOT')
+    assert False
+
+def test_yaml_syntax():
+    """
+    Verify syntax for ansible files with ansible-lint + yamllint
+    """
+    assert False
 
 def test_resolution(host):
     """

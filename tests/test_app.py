@@ -2,6 +2,8 @@
 
 import requests
 
+# verify that ansible is NOT installed here
+
 def apache_is_responding_for_vhost(host):
     """Test if apache is responding for given vhost"""
     response = requests.get("http://" + host)

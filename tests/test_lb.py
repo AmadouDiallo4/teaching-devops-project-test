@@ -1,4 +1,6 @@
 
+# verify that ansible is NOT installed here
+
 def test_dnsmasq_is_installed(host):
     """Verify that dnsmasq is installed"""
     assert host.package("dnsmasq").is_installed
